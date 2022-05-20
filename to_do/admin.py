@@ -5,4 +5,5 @@ from .models import Todo
 
 @admin.register(Todo)
 class Todo(admin.ModelAdmin):
+  # 何もしないって意味
   pass

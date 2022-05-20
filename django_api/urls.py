@@ -13,9 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+# include関数により、プロジェクト内のurls.pyを連結することができる
+from django.urls import path, include
 from django.contrib import admin
 from django.urls import path
 
+from to_do.urls import router as to_do_router
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include(to_do_router.urls)),
 ]
